@@ -2,20 +2,41 @@ class Polynom(list):
     def __init__(self, coeffs):
         super().__init__(coeffs)
 
+
     def __repr__(self):
         return "Polynom({})".format(super().__repr__())
 
-    # TODO: fix this method
+
     def __add__(self, other):
-        return Polynom([self[i] + other[i] for i in range(max(len(self), len(other)))])
+        if not isinstance(other, Polynom):
+            raise Exception("Value error while adding polynom with entity other than polynom")
+
+        len_self, len_other = len(self), len(other)
+        max_len, sum_coeffs = max(len_self, len_other), []
+
+        for i in range(max_len):
+            sum_coeffs.append(
+            (self[i] if i < len_self else 0) +
+            (other[i] if i < len_other else 0)
+            )
+
+        return Polynom(sum_coeffs)
 
     # TODO: add methods for subtracting and multipyling polynoms
+    def __sub__(self, other):
+        pass
+    
+    
+    def __mul__(self, value):
+        pass
+
 
     def __call__(self, x):
         result = 0
         for i in range(len(self)):
             result += self[i] * x**i
         return result
+
 
     def __str__(self):
         terms = []
@@ -35,6 +56,7 @@ class Polynom(list):
         if not terms:
             return "0"
         return "".join((terms))
+
 
     def integrate(self, interval: tuple[float, float], solver: "IntagralSolver"):
         return solver.integrate(self, interval)
