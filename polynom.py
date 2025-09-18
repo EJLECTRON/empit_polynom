@@ -24,7 +24,20 @@ class Polynom(list):
 
     # TODO: add methods for subtracting and multipyling polynoms
     def __sub__(self, other):
-        pass
+        if not isinstance(other, Polynom):
+            raise Exception("Value error while subtracting polynom with entity other than polynom")
+
+        len_self, len_other = len(self), len(other)
+        max_len, diff_coeffs = max(len_self, len_other), []
+
+        for i in range(max_len):
+            diff_coeffs.append(
+                (self[i] if i < len_self else 0) -
+                (other[i] if i < len_other else 0)
+            )
+
+        return Polynom(diff_coeffs)
+
     
     
     def __mul__(self, value):
