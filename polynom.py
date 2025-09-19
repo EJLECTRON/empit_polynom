@@ -38,11 +38,19 @@ class Polynom(list):
 
         return Polynom(diff_coeffs)
 
-    
-    
-    def __mul__(self, value):
-        pass
 
+    def __mul__(self, other):
+        if not isinstance(other, Polynom):
+            raise Exception("Value error while multiplying polynom with entity other than polynom")
+
+        len_self, len_other = len(self), len(other)
+        product_coeffs = [0] * (len_self + len_other - 1)
+        
+        for pow_self, coef_self in enumerate(self):
+            for pow_other, coef_other in enumerate(other):
+                product_coeffs[pow_self + pow_other] += coef_self*coef_other
+        
+        return Polynom(product_coeffs)
 
     def __call__(self, x):
         result = 0
