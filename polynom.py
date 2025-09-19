@@ -22,7 +22,7 @@ class Polynom(list):
 
         return Polynom(sum_coeffs)
 
-    # TODO: add methods for subtracting and multipyling polynoms
+
     def __sub__(self, other):
         if not isinstance(other, Polynom):
             raise Exception("Value error while subtracting polynom with entity other than polynom")
@@ -52,6 +52,7 @@ class Polynom(list):
         
         return Polynom(product_coeffs)
 
+
     def __call__(self, x):
         result = 0
         for i in range(len(self)):
@@ -79,10 +80,10 @@ class Polynom(list):
         return "".join((terms))
 
 
-    def integrate(self, interval: tuple[float, float], solver: "IntagralSolver"):
+    def integrate(self, interval: tuple[float, float], solver: "IntegralSolver"):
         return solver.integrate(self, interval)
 
 
-class IntagralSolver:
+class IntegralSolver:
     def integrate(self, polynom: Polynom, interval: tuple[float, float]):
         raise NotImplementedError
