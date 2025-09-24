@@ -16,7 +16,7 @@ class TestPolynom(unittest.TestCase):
         p2 = Polynom([1, 2, 3])
         result = p1 + p2
         self.assertEqual(result, Polynom([5, -3.5, 3]))
-        
+
 
     def test_add_different_length_2(self):
         p1 = Polynom([1, 2, 3])
@@ -139,7 +139,6 @@ class TestPolynomMultiplication(unittest.TestCase):
         p2 = Polynom([2, 0, 3]) 
         result = p1 * p2
         self.assertEqual(result, Polynom([2, 0, 3, 10, 690, 1321, -7671, 1967, -13059, 12]))
-
 
 
 if __name__ == "__main__":
