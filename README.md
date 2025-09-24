@@ -1,8 +1,8 @@
 # EMPIT Coding Interview Challenge
 
-Execute this python module (empit_coding_challenge) like this:
+Execute this python module (empit_polynom) like this:
 
-    python -m empit_coding_challenge
+    python -m empit_polynom
 
 ## Tasks
 1. Take a look at the Polynom class in `polynom.py`. It represents a polynom based on a list of coefficients.
