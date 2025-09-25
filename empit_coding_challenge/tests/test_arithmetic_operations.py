@@ -1,6 +1,6 @@
 import unittest
 
-from empit_polynom.polynom import Polynom
+from empit_coding_challenge.polynom import Polynom
 
 
 class TestPolynom(unittest.TestCase):

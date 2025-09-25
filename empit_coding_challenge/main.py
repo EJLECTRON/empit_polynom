@@ -36,8 +36,8 @@ def main():
     # Compare differences
     print("\nDifferences:")
     print("Analytic: ", abs(result_analytic - expected) / abs(expected) * 100)
-    print("Numeric - Analytic:", abs(result_numeric - expected) / abs(expected) * 100)
-    print("Monte Carlo - Analytic:", abs(result_mc - expected) / abs(expected) * 100)
+    print("Numeric:", abs(result_numeric - expected) / abs(expected) * 100)
+    print("Monte Carlo:", abs(result_mc - expected) / abs(expected) * 100)
 
 
 if __name__ == "__main__":

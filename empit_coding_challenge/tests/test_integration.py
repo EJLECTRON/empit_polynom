@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
 
-from empit_polynom.polynom import Polynom
-from empit_polynom.solvers import AnalyticalSolver, NumericIntegralEstimation, MonteCarloIntegralEstimation
+from empit_coding_challenge.polynom import Polynom
+from empit_coding_challenge.solvers import AnalyticalSolver, NumericIntegralEstimation, MonteCarloIntegralEstimation
 
 N_TESTS = 1
 ACCEPTED_ERROR = 0.25
